@@ -1,5 +1,3 @@
-import appStylesHref from './app.css?url';
-
 import { ScrollRestoration, Links, Meta, Scripts } from '@remix-run/react';
 
 export default function App() {
