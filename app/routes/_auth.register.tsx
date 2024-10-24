@@ -1,112 +1,128 @@
-import { ActionFunctionArgs, redirect } from '@remix-run/node';
-import { Form, json, useActionData } from '@remix-run/react';
-import { useEffect, useState } from 'react';
+import { Form } from '@remix-run/react';
+import { FormEvent, useState } from 'react';
+import { LinksFunction } from '@remix-run/node';
+import * as Yup from 'yup';
 
-export async function action({ request }: ActionFunctionArgs) {
-  const formData = await request.formData();
-  const email = String(formData.get('email'));
-  const password = String(formData.get('password'));
+import { Input, links as inputLink } from '../components/Input';
+import { Button } from '../components/Button';
+import { Select, links as selectLink } from '../components/Select';
+import { initialFormValues, schema } from '../utils/validation';
+import headerStylesHref from '../styles/register.css?url';
+import { Agreement, links as agreementLink } from '../components/Agreement';
 
-  const errors: { email?: string; password?: string } = {};
+export const links: LinksFunction = () => {
+  return [
+    { rel: 'stylesheet', href: headerStylesHref },
+    ...inputLink,
+    ...selectLink,
+    ...agreementLink,
+  ];
+};
 
-  if (!email.includes('@')) {
-    errors.email = 'Invalid email address';
-  }
-
-  if (password.length < 5 || password.length > 10) {
-    errors.password = 'Password should be at least 12 characters';
-  }
-
-  if (Object.keys(errors).length > 0) {
-    return json({ errors });
-  }
-
-  return redirect('/');
-}
+type formErrorsType = {
+  firstName?: string;
+  surname?: string;
+  location?: string;
+  email?: string;
+  password?: string;
+};
 
 export default function Register() {
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [errors, setErrors] = useState<formErrorsType>({});
+
+  const handleInputChange = async (e: {
+    target: { name: string; value: string };
+  }) => {
+    const { name, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+
+    try {
+      await schema.validateAt(name, { [name]: value });
+      setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        setErrors((prevErrors) => ({ ...prevErrors, [name]: error.message }));
+      }
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    try {
+      await schema.validate(formValues, { abortEarly: false });
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        const validationErrors: formErrorsType = { ...initialFormValues };
+
+        error.inner.forEach((err) => {
+          if (err.path && err.path in validationErrors) {
+            validationErrors[err.path as keyof typeof validationErrors] =
+              err.message;
+          }
+        });
+        setErrors(validationErrors);
+      }
+    }
+  };
+
   return (
     <div id="register">
-      <Signup />
-    </div>
-  );
-}
-
-const Signup = () => {
-  const actionData = useActionData<typeof action>();
-
-  const [isEmailInvalid, setIsEmailInvalid] = useState(false);
-  const [isPasswordInvalid, setIsPasswordInvalid] = useState(false);
-
-  useEffect(() => {
-    setIsEmailInvalid(!!actionData?.errors.email);
-    setIsPasswordInvalid(!!actionData?.errors.password);
-  }, [actionData]);
-
-  return (
-    <Form method="post">
-      <h1>Sign Up</h1>
-      <div>
-        <input placeholder="First Name" type="text" name="firstName" />
-        <input placeholder="Surname" type="text" name="surname" />
-      </div>
-      <div>
-        <input placeholder="Mobile Phone*" type="text" name="mobilePhone" />
-      </div>
-      <div>
-        <select name="location" defaultValue="">
-          <option value="" hidden disabled>
-            Location
-          </option>
-          <option value="london">London</option>
-          <option value="lisbon">Lisbon</option>
-          <option value="porto">Porto</option>
-          <option value="newYork">New York</option>
-          <option value="malmo">Malmo</option>
-          <option value="tokyo">Tokyo</option>
-        </select>
-      </div>
-      <div>
-        <input
+      <Form onSubmit={handleSubmit} noValidate>
+        <h1>Sign Up</h1>
+        <div>
+          <Input
+            placeholder="First Name"
+            type="text"
+            name="firstName"
+            onChange={handleInputChange}
+            isInputValid={!errors.firstName}
+            error={errors.firstName}
+          />
+          <Input
+            placeholder="Surname"
+            type="text"
+            name="surname"
+            onChange={handleInputChange}
+            isInputValid={!errors.surname}
+            error={errors.surname}
+          />
+        </div>
+        <Input placeholder="Mobile Phone*" type="text" name="mobilePhone" />
+        <Select
+          defaultValue={''}
+          name="location"
+          onChange={handleInputChange}
+          isInputValid={!errors.location}
+          error={errors.location}
+        />
+        <Input
           placeholder="Email"
           type="email"
           name="email"
-          onChange={(e) => {
-            setIsEmailInvalid(!e.target.value.includes('@'));
-          }}
+          onChange={handleInputChange}
+          isInputValid={!errors.email}
+          error={errors.email}
         />
-        {isEmailInvalid && (
-          <small className="inputErrorMessage">Invalid email address</small>
-        )}
-      </div>
-
-      <div>
-        <input
+        <Input
           placeholder="Password"
           type="password"
           name="password"
-          onChange={(e) => {
-            setIsPasswordInvalid(
-              e.target.value.length < 5 || e.target.value.length > 10
-            );
-          }}
+          onChange={handleInputChange}
+          isInputValid={!errors.password}
+          error={errors.password}
+          hint="Must be 5 to 10 digits"
         />
 
-        {isPasswordInvalid ? (
-          <small className="inputErrorMessage">Invalid password length</small>
-        ) : (
-          <small className="inputHint">Must be 5 to 10 digits</small>
-        )}
-      </div>
-
-      <button type="submit">Create Account</button>
-      <div>
-        <p>
-          By creating an account, you agree to our
-          <a href="terms_and_conditions"> Terms & Conditions</a> and
-          <a href="privacy_policy"> Privacy Policy</a>.
-        </p>
-      </div>
-    </Form>
+        <Button variant="form" type="submit">
+          Create Account
+        </Button>
+        <Agreement />
+      </Form>
+    </div>
   );
-};
+}

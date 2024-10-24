@@ -1,4 +1,11 @@
 import { Outlet } from '@remix-run/react';
+import { LinksFunction } from '@remix-run/node';
+
+import { Header, links as headerLink } from '../components/Header';
+
+export const links: LinksFunction = () => {
+  return [...headerLink];
+};
 
 export default function Auth() {
   return (
@@ -10,11 +17,3 @@ export default function Auth() {
     </>
   );
 }
-
-const Header = () => {
-  return (
-    <div id="nav-bar">
-      <h1>medicare</h1>
-    </div>
-  );
-};

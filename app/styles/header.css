@@ -1,0 +1,20 @@
+#header {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  height: 60px;
+  background: white;
+}
+
+#header a {
+  color: var(--textTertiary);
+  font-family: Domine;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 28px;
+  margin: 0;
+  text-decoration: none;
+}
