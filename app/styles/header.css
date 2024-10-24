@@ -1,4 +1,4 @@
-#header {
+.header {
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -9,7 +9,7 @@
   background: white;
 }
 
-#header a {
+.header a {
   color: var(--textTertiary);
   font-family: Domine;
   font-weight: 700;

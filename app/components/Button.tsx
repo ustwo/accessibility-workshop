@@ -14,9 +14,13 @@ const buttonVariants = {
     lineHeight: '22.95px',
   },
 };
-export const Button = ({ children, type, onClick, variant }: ButtonProps) => {
+export const Button = ({ children, variant, ...props }: ButtonProps) => {
   return (
-    <button type={type} onClick={onClick} style={buttonVariants[variant]}>
+    <button
+      type={props.type}
+      onClick={props.onClick}
+      style={buttonVariants[variant]}
+    >
       {children}
     </button>
   );

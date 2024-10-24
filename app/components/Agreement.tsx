@@ -6,7 +6,7 @@ export const links = [{ rel: 'stylesheet', href: agreementCssUrl }];
 
 export const Agreement = () => {
   return (
-    <div id='agreement'>
+    <div className='agreement'>
       <p>
         By creating an account, you agree to our
         <Link to="/terms_and_conditions"> Terms & Conditions</Link> and

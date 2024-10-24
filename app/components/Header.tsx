@@ -6,7 +6,7 @@ export const links = [{ rel: 'stylesheet', href: headerCssUrl }];
 
 export const Header = () => {
   return (
-    <div id="header">
+    <div className="header">
       <Link to="/">medicare</Link>
     </div>
   );

@@ -1,4 +1,4 @@
-#agreement p {
+.agreement p {
   font-size: 13px;
   line-height: 16.93px;
   text-align: center;
@@ -8,7 +8,7 @@
   font-family: 'DM Sans';
 }
 
-#agreement a {
+.agreement a {
   text-decoration: none;
   color: var(--textTertiary);
 }

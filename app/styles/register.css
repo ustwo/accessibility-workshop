@@ -1,11 +1,11 @@
-#register {
+.register {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 48px;
 }
 
-#register form {
+.register form {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -13,7 +13,7 @@
   margin: 40px 18px;
 }
 
-#register h1 {
+.register h1 {
   color: var(--textPrimary);
   margin: 0;
   line-height: 28.6px;
@@ -22,17 +22,17 @@
   padding-bottom: 16px;
 }
 
-#register form > div:first-of-type {
+.register form > div:first-of-type {
   display: flex;
   gap: 16px;
 }
 
-#register form > div:last-of-type {
+.register form > div:last-of-type {
   display: flex;
   justify-content: center;
 }
 
-#register button {
+.register button {
   margin-top: 10px;
   margin-bottom: 10px;
 }

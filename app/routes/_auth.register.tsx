@@ -71,7 +71,7 @@ export default function Register() {
   };
 
   return (
-    <div id="register">
+    <div className="register">
       <Form onSubmit={handleSubmit} noValidate>
         <h1>Sign Up</h1>
         <div>

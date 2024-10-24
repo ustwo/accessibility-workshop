@@ -35,18 +35,16 @@ const locationValues = [
 ];
 
 export const Select = ({
-  defaultValue,
-  name,
-  onChange,
   error,
   isInputValid,
+  ...props
 }: SelectProps) => {
   return (
     <div>
       <select
-        defaultValue={defaultValue}
-        name={name}
-        onChange={onChange}
+        defaultValue={props.defaultValue}
+        name={props.name}
+        onChange={props.onChange}
         required
       >
         {locationValues.map(({ label, value }) => (

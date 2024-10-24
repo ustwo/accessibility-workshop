@@ -8,22 +8,14 @@ type InputProps = {
   isInputValid?: boolean;
 } & JSX.IntrinsicElements['input'];
 
-export const Input = ({
-  type,
-  placeholder,
-  name,
-  onChange,
-  hint,
-  error,
-  isInputValid,
-}: InputProps) => {
+export const Input = ({ hint, error, isInputValid, ...props }: InputProps) => {
   return (
     <div>
       <input
-        type={type}
-        placeholder={placeholder}
-        name={name}
-        onChange={onChange}
+        type={props.type}
+        placeholder={props.placeholder}
+        name={props.name}
+        onChange={props.onChange}
       />
       {!isInputValid ? (
         <small className="inputErrorMessage">{error}</small>
