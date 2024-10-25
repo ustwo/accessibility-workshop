@@ -1,7 +1,8 @@
-import { Form } from '@remix-run/react';
-import { FormEvent, useState } from 'react';
-import { LinksFunction } from '@remix-run/node';
 import * as Yup from 'yup';
+import { FormEvent, useState } from 'react';
+
+import { Form } from '@remix-run/react';
+import { LinksFunction } from '@remix-run/node';
 
 import { Input, links as inputLink } from '../components/Input';
 import { Button } from '../components/Button';
