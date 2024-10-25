@@ -11,12 +11,7 @@ type InputProps = {
 export const Input = ({ hint, error, isInputValid, ...props }: InputProps) => {
   return (
     <div>
-      <input
-        type={props.type}
-        placeholder={props.placeholder}
-        name={props.name}
-        onChange={props.onChange}
-      />
+      <input {...props} />
       {!isInputValid ? (
         <small className="inputErrorMessage">{error}</small>
       ) : (

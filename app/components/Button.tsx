@@ -17,9 +17,8 @@ const buttonVariants = {
 export const Button = ({ children, variant, ...props }: ButtonProps) => {
   return (
     <button
-      type={props.type}
-      onClick={props.onClick}
       style={buttonVariants[variant]}
+      {...props}
     >
       {children}
     </button>

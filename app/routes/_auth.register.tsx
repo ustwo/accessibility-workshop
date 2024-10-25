@@ -99,6 +99,7 @@ export default function Register() {
           onChange={handleInputChange}
           isInputValid={!errors.location}
           error={errors.location}
+          required
         />
         <Input
           placeholder="Email"

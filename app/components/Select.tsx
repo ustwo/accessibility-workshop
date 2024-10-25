@@ -42,10 +42,7 @@ export const Select = ({
   return (
     <div>
       <select
-        defaultValue={props.defaultValue}
-        name={props.name}
-        onChange={props.onChange}
-        required
+        {...props}
       >
         {locationValues.map(({ label, value }) => (
           <option key={value} value={value} hidden={!value} disabled={!value}>
