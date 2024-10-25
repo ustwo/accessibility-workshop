@@ -1,0 +1,38 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 48px;
+}
+
+.register form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 476px;
+  margin: 40px 18px;
+}
+
+.register h1 {
+  color: var(--textPrimary);
+  margin: 0;
+  line-height: 28.6px;
+  font-size: 22px;
+  padding-top: 28px;
+  padding-bottom: 16px;
+}
+
+.register form > div:first-of-type {
+  display: flex;
+  gap: 16px;
+}
+
+.register form > div:last-of-type {
+  display: flex;
+  justify-content: center;
+}
+
+.register button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

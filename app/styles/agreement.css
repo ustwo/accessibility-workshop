@@ -1,0 +1,14 @@
+.agreement p {
+  font-size: 13px;
+  line-height: 16.93px;
+  text-align: center;
+  color: var(--textSecondary);
+  max-width: 266px;
+  margin: 0;
+  font-family: 'DM Sans';
+}
+
+.agreement a {
+  text-decoration: none;
+  color: var(--textTertiary);
+}

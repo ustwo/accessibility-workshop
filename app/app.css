@@ -1,0 +1,44 @@
+:root {
+  --primary: #808cff;
+  --backgroundPrimary: #edeeff;
+  --textPrimary: #1b1c28;
+  --textSecondary: #89898c;
+  --textTertiary: #6978ff;
+  --textError: #dd0f00;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Domine', 'DM Sans',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: calc(100dvh - 60px);
+  margin: 0 48px;
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+}
+
+small {
+  font-family: 'DM Sans';
+}
+
+#auth-main {
+  margin-top: 60px;
+  margin-bottom: 56px;
+}

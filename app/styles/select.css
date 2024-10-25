@@ -1,0 +1,33 @@
+select {
+  font-family: 'DM Sans';
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background-color: var(--backgroundPrimary);
+  padding: 16px 12px;
+  min-width: 230px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 21.6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('../../selectArrowNotAccessible.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: auto;
+}
+
+select:focus {
+  border: 1px solid var(--primary);
+  outline: none;
+}
+
+select:invalid {
+  color: var(--textSecondary);
+}
+
+.selectErrorMessage {
+  color: var(--textError);
+  font-size: 11px;
+  line-height: 14.85px;
+}
