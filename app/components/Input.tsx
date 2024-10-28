@@ -6,11 +6,19 @@ type InputProps = {
   hint?: string;
   error?: string;
   isInputValid?: boolean;
+  label?: string;
 } & JSX.IntrinsicElements['input'];
 
-export const Input = ({ hint, error, isInputValid, ...props }: InputProps) => {
+export const Input = ({
+  hint,
+  error,
+  isInputValid,
+  label,
+  ...props
+}: InputProps) => {
   return (
     <div>
+      <label>{label}</label>
       <input {...props} />
       {!isInputValid ? (
         <small className="inputErrorMessage">{error}</small>

@@ -1,50 +1,31 @@
+import { useLocation } from '@remix-run/react';
+
 import selectCssUrl from '../styles/select.css?url';
+import { locationValues } from '../constants/locations';
 
 export const links = [{ rel: 'stylesheet', href: selectCssUrl }];
 
 type SelectProps = {
   error?: string;
   isInputValid?: boolean;
+  label?: string;
 } & JSX.IntrinsicElements['select'];
-
-const locationValues = [
-  {
-    label: 'Location',
-    value: '',
-  },
-  {
-    label: 'Lisbon',
-    value: 'lisbon',
-  },
-  {
-    label: 'Porto',
-    value: 'porto',
-  },
-  {
-    label: 'New York',
-    value: 'newYork',
-  },
-  {
-    label: 'Malmo',
-    value: 'malmo',
-  },
-  {
-    label: 'Tokyo',
-    value: 'tokyo',
-  },
-];
 
 export const Select = ({
   error,
   isInputValid,
+  label,
   ...props
 }: SelectProps) => {
+  const location = useLocation();
+  const pathName: string = location.pathname;
+  const version = pathName.slice(-2) as keyof typeof locationValues;
+
   return (
     <div>
-      <select
-        {...props}
-      >
-        {locationValues.map(({ label, value }) => (
+      <label>{label}</label>
+      <select {...props}>
+        {locationValues[version].map(({ label, value }) => (
           <option key={value} value={value} hidden={!value} disabled={!value}>
             {label}
           </option>
