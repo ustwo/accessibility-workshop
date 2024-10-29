@@ -32,3 +32,10 @@ input:focus {
   font-size: 11px;
   line-height: 14.85px;
 }
+
+label {
+  color: var(--textLabel);
+  font-family: 'DM Sans';
+  font-size: 14px;
+  line-height: 18.9px;
+}

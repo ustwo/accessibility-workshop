@@ -22,7 +22,7 @@ export const links: LinksFunction = () => {
 
 type formErrorsType = {
   firstName?: string;
-  surname?: string;
+  lastName?: string;
   location?: string;
   email?: string;
   password?: string;
@@ -77,23 +77,25 @@ export default function Register() {
         <h1>Sign Up</h1>
         <div>
           <Input
-            placeholder="First Name"
+            placeholder="John"
             type="text"
             name="firstName"
             onChange={handleInputChange}
             isInputValid={!errors.firstName}
             error={errors.firstName}
+            label='First Name'
           />
           <Input
-            placeholder="Surname"
+            placeholder="Doe"
             type="text"
-            name="surname"
+            name="lastName"
             onChange={handleInputChange}
-            isInputValid={!errors.surname}
-            error={errors.surname}
+            isInputValid={!errors.lastName}
+            error={errors.lastName}
+            label='Last Name'
           />
         </div>
-        <Input placeholder="Mobile Phone*" type="text" name="mobilePhone" />
+        <Input placeholder="+44 XXXX XXX XXX" type="text" name="mobilePhone" label='Mobile Phone*' />
         <Select
           defaultValue={''}
           name="location"
@@ -101,23 +103,26 @@ export default function Register() {
           isInputValid={!errors.location}
           error={errors.location}
           required
+          label='Location'
         />
         <Input
-          placeholder="Email"
+          placeholder="example@email.com"
           type="email"
           name="email"
           onChange={handleInputChange}
           isInputValid={!errors.email}
           error={errors.email}
+          label='Email'
         />
         <Input
-          placeholder="Password"
+          placeholder="Type"
           type="password"
           name="password"
           onChange={handleInputChange}
           isInputValid={!errors.password}
           error={errors.password}
           hint="Must be 5 to 10 digits"
+          label="Password"
         />
 
         <Button variant="form" type="submit">
