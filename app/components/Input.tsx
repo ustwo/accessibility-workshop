@@ -1,3 +1,5 @@
+import { LegacyRef } from 'react';
+
 import inputCssUrl from '../styles/input.css?url';
 
 export const links = [{ rel: 'stylesheet', href: inputCssUrl }];
@@ -8,6 +10,7 @@ type InputProps = {
   isInputValid?: boolean;
   label?: string;
   labelFor?: string;
+  reference?: LegacyRef<HTMLInputElement>;
 } & JSX.IntrinsicElements['input'];
 
 export const Input = ({
@@ -16,12 +19,13 @@ export const Input = ({
   isInputValid,
   label,
   labelFor,
+  reference,
   ...props
 }: InputProps) => {
   return (
     <div>
       <label htmlFor={labelFor}>{label}</label>
-      <input {...props} />
+      <input ref={reference} {...props} />
       {!isInputValid ? (
         <small className="inputErrorMessage">{error}</small>
       ) : (

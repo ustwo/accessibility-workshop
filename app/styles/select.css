@@ -27,7 +27,7 @@ select:invalid {
 }
 
 .selectErrorMessage {
-  color: var(--textError);
+  color: var(--error);
   font-size: 11px;
   line-height: 14.85px;
 }
