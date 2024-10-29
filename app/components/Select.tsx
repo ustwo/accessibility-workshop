@@ -9,12 +9,14 @@ type SelectProps = {
   error?: string;
   isInputValid?: boolean;
   label?: string;
+  labelFor?: string;
 } & JSX.IntrinsicElements['select'];
 
 export const Select = ({
   error,
   isInputValid,
   label,
+  labelFor,
   ...props
 }: SelectProps) => {
   const location = useLocation();
@@ -23,7 +25,7 @@ export const Select = ({
 
   return (
     <div>
-      <label>{label}</label>
+      <label htmlFor={labelFor}>{label}</label>
       <select {...props}>
         {locationValues[version].map(({ label, value }) => (
           <option key={value} value={value} hidden={!value} disabled={!value}>
