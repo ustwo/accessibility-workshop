@@ -83,7 +83,8 @@ export default function Register() {
             onChange={handleInputChange}
             isInputValid={!errors.firstName}
             error={errors.firstName}
-            label='First Name'
+            label="First Name"
+            labelFor="firstName"
           />
           <Input
             placeholder="Doe"
@@ -92,10 +93,17 @@ export default function Register() {
             onChange={handleInputChange}
             isInputValid={!errors.lastName}
             error={errors.lastName}
-            label='Last Name'
+            label="Last Name"
+            labelFor="lastName"
           />
         </div>
-        <Input placeholder="+44 XXXX XXX XXX" type="text" name="mobilePhone" label='Mobile Phone*' />
+        <Input
+          placeholder="+44 XXXX XXX XXX"
+          type="text"
+          name="mobilePhone"
+          label="Mobile Phone*"
+          labelFor="mobilePhone"
+        />
         <Select
           defaultValue={''}
           name="location"
@@ -103,7 +111,8 @@ export default function Register() {
           isInputValid={!errors.location}
           error={errors.location}
           required
-          label='Location'
+          label="Location"
+          labelFor="location"
         />
         <Input
           placeholder="example@email.com"
@@ -112,7 +121,8 @@ export default function Register() {
           onChange={handleInputChange}
           isInputValid={!errors.email}
           error={errors.email}
-          label='Email'
+          label="Email"
+          labelFor="email"
         />
         <Input
           placeholder="Type"
@@ -123,6 +133,7 @@ export default function Register() {
           error={errors.password}
           hint="Must be 5 to 10 digits"
           label="Password"
+          labelFor="password"
         />
 
         <Button variant="form" type="submit">
