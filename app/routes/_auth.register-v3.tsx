@@ -93,7 +93,7 @@ export default function Register() {
         <h1>Sign Up</h1>
         {Object.keys(errors).length > 0 && (
           <Card variant="error">
-            <div className="errorCard">
+            <fieldset className="errorCard">
               <p>There is a problem</p>
               {Object.keys(errors).map((error, index) => {
                 const errorMessage = errors[error as keyof typeof inputRefs];
@@ -115,7 +115,7 @@ export default function Register() {
                   )
                 );
               })}
-            </div>
+            </fieldset>
           </Card>
         )}
         <div>

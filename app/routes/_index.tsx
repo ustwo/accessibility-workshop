@@ -2,7 +2,7 @@ import { Link } from '@remix-run/react';
 
 export default function IndexRoute() {
   return (
-    <div>
+    <section>
       <h1>Welcome to the accessibility workshop</h1>
       <ul>
         <li>
@@ -17,6 +17,6 @@ export default function IndexRoute() {
           <Link to="/register-v3">Register form with accessibility</Link>
         </li>
       </ul>
-    </div>
+    </section>
   );
 }
