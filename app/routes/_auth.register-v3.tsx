@@ -31,6 +31,7 @@ type formErrorsType = {
 
 export default function Register() {
   const [formValues, setFormValues] = useState(initialFormValues);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const [errors, setErrors] = useState<formErrorsType>({});
 
   const inputRefs = {
@@ -44,10 +45,12 @@ export default function Register() {
   const buttonRefs = useRef<HTMLButtonElement[]>([]);
 
   useEffect(() => {
-    if (buttonRefs.current[0]) {
-      buttonRefs.current[0].focus();
+    const firstElement = buttonRefs.current.findIndex((c) => c != null);
+    if (buttonRefs.current[firstElement]) {
+      buttonRefs.current[firstElement].focus();
     }
-  }, [errors]);
+    setFormSubmitted(false);
+  }, [formSubmitted]);
 
   const handleInputChange = async (e: {
     target: { name: string; value: string };
@@ -59,9 +62,7 @@ export default function Register() {
     });
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-
+  const validateForm = async () => {
     try {
       await schema.validate(formValues, { abortEarly: false });
     } catch (error) {
@@ -79,6 +80,13 @@ export default function Register() {
     }
   };
 
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    validateForm();
+    setFormSubmitted(true);
+  };
+
   const handleFocus = (inputName: keyof typeof inputRefs) => {
     const inputRef = inputRefs[inputName];
 
@@ -86,12 +94,13 @@ export default function Register() {
       inputRef.current.focus();
     }
   };
+  const hasErrors = Object.keys(errors).length > 0;
 
   return (
     <div className="register">
       <Form onSubmit={handleSubmit} noValidate>
         <h1>Sign Up</h1>
-        {Object.keys(errors).length > 0 && (
+        {hasErrors && (
           <Card variant="error">
             <fieldset className="errorCard">
               <p>There is a problem</p>
@@ -129,6 +138,11 @@ export default function Register() {
             labelFor="firstName"
             id="firstName"
             reference={inputRefs.firstName}
+            onBlur={() => {
+              if (hasErrors) {
+                validateForm();
+              }
+            }}
           />
           <Input
             type="text"
@@ -140,6 +154,11 @@ export default function Register() {
             labelFor="lastName"
             id="lastName"
             reference={inputRefs.lastName}
+            onBlur={() => {
+              if (hasErrors) {
+                validateForm();
+              }
+            }}
           />
         </div>
         <Input
@@ -160,6 +179,11 @@ export default function Register() {
           labelFor="location"
           id="location"
           reference={inputRefs.location}
+          onBlur={() => {
+            if (hasErrors) {
+              validateForm();
+            }
+          }}
         />
         <Input
           type="email"
@@ -171,6 +195,11 @@ export default function Register() {
           labelFor="email"
           id="email"
           reference={inputRefs.email}
+          onBlur={() => {
+            if (hasErrors) {
+              validateForm();
+            }
+          }}
         />
         <Input
           type="password"
@@ -183,6 +212,11 @@ export default function Register() {
           labelFor="password"
           id="password"
           reference={inputRefs.password}
+          onBlur={() => {
+            if (hasErrors) {
+              validateForm();
+            }
+          }}
         />
 
         <Button variant="form" type="submit">

@@ -1,8 +1,15 @@
 import { LegacyRef } from 'react';
 
+import { useLocation } from '@remix-run/react';
+
 import inputCssUrl from '../styles/input.css?url';
 
-export const links = [{ rel: 'stylesheet', href: inputCssUrl }];
+import { ErrorMessage, links as errorMessageLink } from './ErrorMessage';
+
+export const links = [
+  { rel: 'stylesheet', href: inputCssUrl },
+  ...errorMessageLink,
+];
 
 type InputProps = {
   hint?: string;
@@ -22,14 +29,19 @@ export const Input = ({
   reference,
   ...props
 }: InputProps) => {
+  const location = useLocation();
+  const pathName: string = location.pathname;
+  const version: string = pathName.slice(-2);
+  const className = version === 'v3' ? 'accessibleInputHint' : 'inputHint';
+
   return (
     <div>
       <label htmlFor={labelFor}>{label}</label>
       <input ref={reference} {...props} />
       {!isInputValid ? (
-        <small className="inputErrorMessage">{error}</small>
+        <ErrorMessage error={error} />
       ) : (
-        <>{hint && <small className="inputHint">{hint}</small>}</>
+        <>{hint && <small className={className}>{hint}</small>}</>
       )}
     </div>
   );

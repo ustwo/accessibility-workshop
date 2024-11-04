@@ -27,10 +27,10 @@ input:focus {
   line-height: 14.85px;
 }
 
-.inputErrorMessage {
-  color: var(--error);
-  font-size: 11px;
-  line-height: 14.85px;
+.accessibleInputHint {
+  color: var(--textSecondary);
+  font-size: 12px;
+  line-height: 16.2px;
 }
 
 label {

@@ -5,7 +5,12 @@ import { useLocation } from '@remix-run/react';
 import selectCssUrl from '../styles/select.css?url';
 import { locationValues } from '../constants/locations';
 
-export const links = [{ rel: 'stylesheet', href: selectCssUrl }];
+import { ErrorMessage, links as errorMessageLink } from './ErrorMessage';
+
+export const links = [
+  { rel: 'stylesheet', href: selectCssUrl },
+  ...errorMessageLink,
+];
 
 type SelectProps = {
   error?: string;
@@ -41,9 +46,7 @@ export const Select = ({
           </option>
         ))}
       </select>
-      {!isInputValid ? (
-        <small className="selectErrorMessage">{error}</small>
-      ) : null}
+      {!isInputValid ? <ErrorMessage error={error} /> : null}
     </div>
   );
 };
