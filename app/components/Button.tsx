@@ -15,7 +15,8 @@ const buttonVariants = {
   },
   clean: {
     border: 'none',
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    padding: '0px'
   }
 };
 export const Button = ({ children, variant, ...props }: ButtonProps) => {

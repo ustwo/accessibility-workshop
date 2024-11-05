@@ -34,6 +34,7 @@ body {
 
 .authenticatedHeader div:nth-of-type(2) {
   width: 486px;
+  margin: 0px 8px
 }
 
 .authenticatedHeader > div:last-of-type {
