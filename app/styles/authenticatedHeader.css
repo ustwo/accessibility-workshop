@@ -1,0 +1,44 @@
+html,
+body {
+  height: calc(100dvh - 84px);
+}
+
+.authenticatedHeader {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: calc(100vw - 96px);
+  padding-top: 30px;
+  padding-bottom: 22px;
+  height: 84px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authenticatedHeader a {
+  color: var(--textTertiary);
+  font-family: Domine;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 28px;
+  margin: 0;
+  text-decoration: none;
+}
+
+.authenticatedHeader > div:first-of-type {
+  display: flex;
+  gap: 28px;
+}
+
+.authenticatedHeader div:nth-of-type(2) {
+  width: 486px;
+  margin: 0px 8px
+}
+
+.authenticatedHeader > div:last-of-type {
+  display: flex;
+  gap: 28px;
+}
+

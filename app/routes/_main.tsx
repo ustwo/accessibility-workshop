@@ -1,17 +1,17 @@
 import { Outlet } from '@remix-run/react';
 import { LinksFunction } from '@remix-run/node';
 
-import { Header, links as headerLink } from '../components/Header';
+import { AuthenticatedHeader, links as authenticatedHeaderLink } from '../components/AuthenticatedHeader';
 
 export const links: LinksFunction = () => {
-  return [...headerLink];
+  return [...authenticatedHeaderLink];
 };
 
 export default function Auth() {
   return (
     <>
-      <Header />
-      <div className="auth-main">
+      <AuthenticatedHeader />
+      <div className='dashboard-main'>
         <Outlet />
       </div>
     </>
