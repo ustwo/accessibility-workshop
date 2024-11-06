@@ -22,7 +22,7 @@ export const AuthenticatedHeader = ({
     <>
       <div className="authenticatedHeader">
         <div>
-          <Button variant="clean" onClick={toggleSidebar} aria-label="Open side menu">
+          <Button variant="clean" onClick={toggleSidebar}>
             <Menu />
           </Button>
           <Link to="/">medicare</Link>
