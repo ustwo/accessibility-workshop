@@ -1,16 +1,19 @@
 :root {
   --primary: #808cff;
   --backgroundPrimary: #edeeff;
+  --backgroundSecondary: #fafaff;
   --textPrimary: #1b1c28;
   --textSecondary: #89898c;
   --textTertiary: #6978ff;
   --textLabel: #666666;
   --textError: #dd0f00;
+  --textSidebar: #21233d;
 }
 
 html {
   box-sizing: border-box;
   margin: 0px 48px;
+  background: var(--backgroundSecondary);
 }
 *,
 *:before,
@@ -23,6 +26,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
 }
 
 button {
@@ -40,5 +44,14 @@ small {
 
 .dashboard-main {
   margin-top: 84px;
-  margin-bottom: 56px;
+  transition: 0.3s;
+  background: white;
+  height: calc(100vh - 84px);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.dashboard-main.sidebar-open {
+  margin-left: 257px;
+  transition: 0.3s;
 }
