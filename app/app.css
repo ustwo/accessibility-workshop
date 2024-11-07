@@ -12,6 +12,7 @@
 
 html {
   box-sizing: border-box;
+  margin: 0px 48px;
 }
 *,
 *:before,
@@ -26,13 +27,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html,
-body {
-  height: calc(100dvh - 60px);
-  margin: 0 48px;
-  line-height: 1.5;
-}
-
 button {
   cursor: pointer;
 }
@@ -41,7 +35,12 @@ small {
   font-family: 'DM Sans';
 }
 
-#auth-main {
+.auth-main {
   margin-top: 60px;
+  margin-bottom: 56px;
+}
+
+.dashboard-main {
+  margin-top: 84px;
   margin-bottom: 56px;
 }

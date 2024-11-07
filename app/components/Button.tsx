@@ -26,6 +26,11 @@ const buttonVariants = {
     textDecoration: 'underline',
     margin: '0px',
   },
+  clean: {
+    border: 'none',
+    backgroundColor: 'transparent',
+    padding: '0px'
+  }
 };
 export const Button = ({
   children,
