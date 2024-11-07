@@ -1,0 +1,31 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: -webkit-fill-available;
+  width: 257px;
+  left: -1000px;
+  transition: 0.3s;
+  padding-top: 28px;
+  padding-left: 18px;
+  gap: 32px;
+}
+
+.sidebar.open {
+  left: 48px;
+  transition: 0.3s;
+}
+
+.sidebar a {
+  display: flex;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--textLabel);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+a.selected {
+  color: var(--textSidebar)
+}
