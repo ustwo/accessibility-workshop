@@ -15,6 +15,10 @@ export const links: LinksFunction = () => [
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=DM Sans',
   },
+  {
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css?family=Public Sans',
+  },
 ];
 
 export default function App() {

@@ -3,13 +3,17 @@
   --backgroundPrimary: #edeeff;
   --backgroundSecondary: #fafaff;
   --backgroundError: #ffe5e2;
+  --backgroundSuccess: #dff4e0;
+  --backgroundTertiary: #1d2247;
   --textPrimary: #1b1c28;
   --textSecondary: #89898c;
   --textTertiary: #6978ff;
   --textLabel: #666666;
   --textButton: #f1f1f6;
   --error: #dd0f00;
+  --success: #098833;
   --textSidebar: #21233d;
+  --borderPrimary: #dadae6;
 }
 
 html {

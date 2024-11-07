@@ -1,6 +1,7 @@
 import { useLocation } from '@remix-run/react';
 
 import errorMessageCssUrl from '../styles/errorMessage.css?url';
+import { Warning } from '../icons';
 
 export const links = [{ rel: 'stylesheet', href: errorMessageCssUrl }];
 
@@ -17,7 +18,7 @@ export const ErrorMessage = ({ error }: { error?: string }) => {
   if (version === 'v3') {
     return (
       <div className={className}>
-        <img src="../../warning.svg" alt="" height={16} width={16} />
+        <Warning />
         <small>{error}</small>
       </div>
     );

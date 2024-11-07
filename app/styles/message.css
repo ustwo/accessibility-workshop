@@ -1,0 +1,32 @@
+.message {
+  border-bottom: 1.5px solid var(--borderPrimary);
+  font-family: 'Public Sans';
+  margin: 12px;
+  padding-bottom: 12px;
+}
+
+.message > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message h4 {
+  color: var(--backgroundTertiary);
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0px;
+}
+
+.message > div > p {
+  color: var(--backgroundTertiary);
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0px;
+  opacity: 62%;
+}
+
+.message > div:last-of-type > p {
+  font-size: 15px;
+  line-height: 20px;
+}

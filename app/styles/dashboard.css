@@ -1,0 +1,74 @@
+.title {
+  height: 132px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--backgroundTertiary);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 0px 40px;
+}
+
+.title h1 {
+  font-size: 34px;
+  font-family: 'DM Sans';
+  font-weight: 600;
+  line-height: 40px;
+  margin: 0px;
+  color: white;
+}
+
+.dashboard-content {
+  margin: 40px;
+}
+
+.assigned-gp {
+  width: 100%;
+}
+
+.assigned-gp > div:first-of-type {
+  margin-top: 24px;
+  display: flex;
+  gap: 24px;
+}
+
+.video-container > div:first-of-type {
+  position: relative;
+  min-width: 568.9px;
+  width: 568.9px;
+  margin-bottom: 24px;
+}
+
+.video-container video {
+  border-radius: 12px;
+}
+
+.mute-button {
+  position: absolute;
+  bottom: 18px;
+  left: 23px;
+}
+
+.video-container > div:last-of-type {
+  margin-top: 24px;
+}
+
+.messages-container {
+  width: 100%;
+}
+
+.messages-container > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 43px;
+  margin-bottom: 24px;
+}
+
+.messages-container h3 {
+  font-family: 'DM Sans';
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0px;
+}

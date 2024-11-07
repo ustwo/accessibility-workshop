@@ -1,0 +1,18 @@
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 75px;
+  border-radius: 16px;
+  padding: 4px 8px;
+}
+
+.status > p {
+  margin: 0px;
+  font-family: 'DM Sans';
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: black;
+  text-transform: capitalize;
+}
