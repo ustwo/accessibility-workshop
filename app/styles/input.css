@@ -35,10 +35,10 @@ input[type='search'] {
   line-height: 14.85px;
 }
 
-.inputErrorMessage {
-  color: var(--textError);
-  font-size: 11px;
-  line-height: 14.85px;
+.accessibleInputHint {
+  color: var(--textSecondary);
+  font-size: 12px;
+  line-height: 16.2px;
 }
 
 label {

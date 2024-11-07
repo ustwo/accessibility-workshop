@@ -34,4 +34,10 @@ export const locationValues = {
       value: '',
     },
   ].concat(defaultLocationValues),
+  v3: [
+    {
+      label: '',
+      value: '',
+    },
+  ].concat(defaultLocationValues),
 };
