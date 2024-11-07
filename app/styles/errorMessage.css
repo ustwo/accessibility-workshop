@@ -1,0 +1,18 @@
+.errorMessage {
+  color: var(--error);
+  font-size: 11px;
+  line-height: 14.85px;
+}
+
+.accessibleErrorMessage {
+  margin-top: 4px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.accessibleErrorMessage small {
+  color: var(--error);
+  font-size: 12px;
+}

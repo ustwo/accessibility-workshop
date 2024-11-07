@@ -1,11 +1,13 @@
 :root {
   --primary: #808cff;
   --backgroundPrimary: #edeeff;
+  --backgroundError: #ffe5e2;
   --textPrimary: #1b1c28;
   --textSecondary: #89898c;
   --textTertiary: #6978ff;
   --textLabel: #666666;
-  --textError: #dd0f00;
+  --textButton: #f1f1f6;
+  --error: #dd0f00;
 }
 
 html {
