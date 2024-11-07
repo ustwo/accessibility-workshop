@@ -94,7 +94,14 @@ export default function Register() {
       inputRef.current.focus();
     }
   };
+
   const hasErrors = Object.keys(errors).length > 0;
+
+  const handleBlur = () => {
+    if (hasErrors) {
+      validateForm();
+    }
+  };
 
   return (
     <div className="register">
@@ -154,11 +161,7 @@ export default function Register() {
             labelFor="lastName"
             id="lastName"
             reference={inputRefs.lastName}
-            onBlur={() => {
-              if (hasErrors) {
-                validateForm();
-              }
-            }}
+            onBlur={handleBlur}
           />
         </div>
         <Input
@@ -179,11 +182,7 @@ export default function Register() {
           labelFor="location"
           id="location"
           reference={inputRefs.location}
-          onBlur={() => {
-            if (hasErrors) {
-              validateForm();
-            }
-          }}
+          onBlur={handleBlur}
         />
         <Input
           type="email"
@@ -195,11 +194,7 @@ export default function Register() {
           labelFor="email"
           id="email"
           reference={inputRefs.email}
-          onBlur={() => {
-            if (hasErrors) {
-              validateForm();
-            }
-          }}
+          onBlur={handleBlur}
         />
         <Input
           type="password"
@@ -208,15 +203,12 @@ export default function Register() {
           isInputValid={!errors.password}
           error={errors.password}
           hint="Must be 5 to 10 digits"
+          aria-describedby="password-hint"
           label="Password"
           labelFor="password"
           id="password"
           reference={inputRefs.password}
-          onBlur={() => {
-            if (hasErrors) {
-              validateForm();
-            }
-          }}
+          onBlur={handleBlur}
         />
 
         <Button variant="form" type="submit">

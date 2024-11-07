@@ -41,7 +41,7 @@ export const Input = ({
       {!isInputValid ? (
         <ErrorMessage error={error} />
       ) : (
-        <>{hint && <small className={className}>{hint}</small>}</>
+        <>{hint && <small id={props['aria-describedby']} className={className}>{hint}</small>}</>
       )}
     </div>
   );
