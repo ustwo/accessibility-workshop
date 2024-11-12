@@ -45,6 +45,8 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:7.37.2"],\
           ["eslint-plugin-react-hooks", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:4.6.2"],\
           ["eslint-plugin-unused-imports", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:4.1.4"],\
+          ["highcharts", "npm:11.4.8"],\
+          ["highcharts-react-official", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:3.2.1"],\
           ["husky", "npm:9.1.6"],\
           ["isbot", "npm:4.4.0"],\
           ["match-sorter", "npm:6.3.4"],\
@@ -5730,6 +5732,41 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["highcharts", [\
+      ["npm:11.4.8", {\
+        "packageLocation": "../../.yarn/berry/cache/highcharts-npm-11.4.8-8cf3d3450c-10c0.zip/node_modules/highcharts/",\
+        "packageDependencies": [\
+          ["highcharts", "npm:11.4.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["highcharts-react-official", [\
+      ["npm:3.2.1", {\
+        "packageLocation": "../../.yarn/berry/cache/highcharts-react-official-npm-3.2.1-34b313385e-10c0.zip/node_modules/highcharts-react-official/",\
+        "packageDependencies": [\
+          ["highcharts-react-official", "npm:3.2.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:3.2.1", {\
+        "packageLocation": "./.yarn/__virtual__/highcharts-react-official-virtual-42c4a82dde/3/.yarn/berry/cache/highcharts-react-official-npm-3.2.1-34b313385e-10c0.zip/node_modules/highcharts-react-official/",\
+        "packageDependencies": [\
+          ["highcharts-react-official", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:3.2.1"],\
+          ["@types/highcharts", null],\
+          ["@types/react", "npm:18.3.12"],\
+          ["highcharts", "npm:11.4.8"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/highcharts",\
+          "@types/react",\
+          "highcharts",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["hosted-git-info", [\
       ["npm:6.1.1", {\
         "packageLocation": "../../.yarn/berry/cache/hosted-git-info-npm-6.1.1-d57807f6a5-10c0.zip/node_modules/hosted-git-info/",\
@@ -7038,6 +7075,8 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:7.37.2"],\
           ["eslint-plugin-react-hooks", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:4.6.2"],\
           ["eslint-plugin-unused-imports", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:4.1.4"],\
+          ["highcharts", "npm:11.4.8"],\
+          ["highcharts-react-official", "virtual:3352872ea6e75710f2950aa5e3a91096700a18bad0bc5e38fe44c81c97639a4808121e4fc328056c2d36b0fa7a87af3bbf37ecb79c4cc83ebe51ce237b3f7818#npm:3.2.1"],\
           ["husky", "npm:9.1.6"],\
           ["isbot", "npm:4.4.0"],\
           ["match-sorter", "npm:6.3.4"],\

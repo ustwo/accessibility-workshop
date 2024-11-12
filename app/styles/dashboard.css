@@ -22,12 +22,15 @@
   margin: 40px;
 }
 
+.dashboard-content h1 {
+  padding-bottom: 24px;
+}
+
 .assigned-gp {
   width: 100%;
 }
 
 .assigned-gp > div:first-of-type {
-  margin-top: 24px;
   display: flex;
   gap: 24px;
 }
@@ -37,6 +40,7 @@
   min-width: 568.9px;
   width: 568.9px;
   margin-bottom: 24px;
+  z-index: 1;
 }
 
 .video-container video {
@@ -71,4 +75,94 @@
   font-weight: 600;
   line-height: 24px;
   margin: 0px;
+}
+
+.history {
+  margin-top: 56px;
+}
+
+.statistics {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.statistics div {
+  flex: 1;
+}
+
+p.card-title {
+  margin: 0px;
+  font-family: 'DM Sans';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--backgroundTertiary);
+}
+
+.statistics .card-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-family: 'Outfit';
+  padding-top: 18px;
+}
+
+.statistics .card-value > p {
+  color: var(--backgroundTertiary);
+  margin: 0px;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 38px;
+}
+
+.statistics .table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+}
+
+.statistics .card-value a,
+.statistics .table-header a {
+  color: var(--backgroundTertiary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16.38px;
+}
+
+.statistics .table-row {
+  display: flex;
+  gap: 16px;
+}
+
+.statistics .table-row p {
+  margin: 0px;
+  padding: 20.5px 0px;
+  font-family: 'DM Sans';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  border-top: 1.5px solid var(--borderPrimary);
+}
+
+.statistics .table-row p:first-of-type {
+  flex: 2;
+}
+
+.statistics .table-row p:nth-of-type(2) {
+  flex: 1;
+}
+
+.statistics .chart {
+  display: flex;
+  flex-direction: column;
+  gap: 18px
+}
+
+.statistics .chart > div {
+  width: 100%;
+  max-width: 422px;
+  height: 175px;
 }

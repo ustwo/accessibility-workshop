@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { LinksFunction } from '@remix-run/node';
+import { Link } from '@remix-run/react';
 
 import { Button } from '../components/Button';
 import dashboardStylesHref from '../styles/dashboard.css?url';
@@ -9,6 +10,9 @@ import { Title } from '../components/Title';
 import { Message, links as messageLink } from '../components/Message';
 import { messages } from '../constants/messages';
 import { Status, links as statusLink } from '../components/Status';
+import { Card } from '../components/Card';
+import { historyStatistics, historyTable } from '../constants/statistics';
+import { DonutChartV1 } from '../components/DonutChart';
 
 export const links: LinksFunction = () => {
   return [
@@ -76,6 +80,47 @@ export default function Dashboard() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+        <div className="history">
+          <Title variant={'medium'} title="Your History" />
+          <div className="statistics">
+            {historyStatistics.map(({ title, value, url }) => (
+              <Card key={title} variant="default">
+                <>
+                  <p className="card-title">{title}</p>
+                  <div className="card-value">
+                    <p>{value}</p>
+                    {url && <Link to={url}>See all</Link>}
+                  </div>
+                </>
+              </Card>
+            ))}
+          </div>
+          <div className="statistics">
+            <Card variant="default">
+              <>
+                <div className="table-header">
+                  <p className="card-title">Billing</p>
+                  <Link to="/billing">See all</Link>
+                </div>
+                {historyTable.map(({ date, name, price }) => (
+                  <div key={date} className="table-row">
+                    <p>{date}</p>
+                    <p>{name}</p>
+                    <p>{price}</p>
+                  </div>
+                ))}
+              </>
+            </Card>
+            <Card variant="default">
+              <div className="chart">
+                <p className="card-title">Specialties</p>
+                <div>
+                  <DonutChartV1 />
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </div>
