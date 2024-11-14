@@ -18,16 +18,12 @@
   color: white;
 }
 
-.dashboard-content {
-  margin: 40px;
-}
-
 .dashboard-content h1 {
   padding-bottom: 24px;
 }
 
 .assigned-gp {
-  width: 100%;
+  padding: 40px 40px 16px 40px;
 }
 
 .assigned-gp > div:first-of-type {
@@ -78,7 +74,7 @@
 }
 
 .history {
-  margin-top: 56px;
+  padding: 40px 40px 16px 40px;
 }
 
 .statistics {
@@ -158,11 +154,122 @@ p.card-title {
 .statistics .chart {
   display: flex;
   flex-direction: column;
-  gap: 18px
+  gap: 18px;
 }
 
 .statistics .chart > div {
   width: 100%;
   max-width: 422px;
   height: 175px;
+}
+
+.specialties {
+  padding-bottom: 18px;
+}
+
+.specialties > div:first-of-type {
+  padding: 40px 40px 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specialties h1,
+.appointments h1 {
+  padding: 0px;
+}
+
+.specialties a,
+.appointments a {
+  color: var(--backgroundTertiary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16.38px;
+}
+
+.appointments {
+  padding: 40px 40px 16px 40px;
+}
+
+.appointments > div:first-of-type {
+  padding-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appointments .tab-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'DM Sans';
+}
+
+.appointments .tab-content > div {
+  flex: 1;
+}
+
+.tab-appointments-data > p {
+  margin: 0px;
+}
+
+.tab-appointments-data > p:first-of-type {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22.13px;
+}
+
+.tab-appointments-data > p:nth-of-type(2) {
+  font-size: 15px;
+  line-height: 22.13px;
+  color: var(--textLabel);
+}
+.tab-appointments-data > p:last-of-type {
+  background-color: white;
+  font-size: 11px;
+  line-height: 14.32px;
+  color: var(--backgroundTertiary);
+  padding: 4px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tab-appointments-action {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.tab-appointments-action > div {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 8px;
+}
+
+.tab-appointments-action > div > p {
+  margin: 0px;
+  font-size: 24px;
+  line-height: 31.25px;
+  color: black;
+}
+
+.tab-appointments-action > div > div {
+  display: flex;
+  gap: 12px;
+}
+.tab-appointments-action button {
+  color: var(--backgroundTertiary);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 14.32px;
+  font-family: 'DM Sans';
+}
+
+.tab-appointments-action > img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
 }

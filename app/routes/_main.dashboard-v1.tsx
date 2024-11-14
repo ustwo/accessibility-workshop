@@ -13,12 +13,18 @@ import { Status, links as statusLink } from '../components/Status';
 import { Card } from '../components/Card';
 import { historyStatistics, historyTable } from '../constants/statistics';
 import { DonutChartV1 } from '../components/DonutChart';
+import { Carousel, links as carouselLink } from '../components/Carousel';
+import { carouselItems } from '../constants/history';
+import { Tab, links as tabLink } from '../components/Tab';
+import { tabs } from '../constants/appointments';
 
 export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: dashboardStylesHref },
     ...messageLink,
     ...statusLink,
+    ...carouselLink,
+    ...tabLink,
   ];
 };
 
@@ -33,6 +39,7 @@ export default function Dashboard() {
       setIsMuted(video.muted);
     }
   };
+
   return (
     <div>
       <div className="title">
@@ -122,6 +129,50 @@ export default function Dashboard() {
               </div>
             </Card>
           </div>
+        </div>
+        <div className="specialties">
+          <div>
+            <Title variant={'medium'} title="Your History" />
+            <Link to="/medical-specialties">See all</Link>
+          </div>
+          <Carousel items={carouselItems} interval={4000} />
+        </div>
+        <div className="appointments">
+          <div>
+            <Title variant={'medium'} title="Upcoming appointments" />
+            <Link to="/appointments">See all</Link>
+          </div>
+          <Tab tabLabels={tabs.map((tab) => tab.label)}>
+            {tabs.map((tab, tabIndex) => (
+              <div className="tab-content" key={tabIndex}>
+                {tab.data.map((item, itemIndex) => (
+                  <Card key={itemIndex} variant="tab">
+                    <>
+                      <div className="tab-appointments-data">
+                        <p>{item.drName}</p>
+                        <p>{item.date}</p>
+                        <p>{item.specialty}</p>
+                      </div>
+                      <div className="tab-appointments-action">
+                        <div>
+                          <p>{item.price}</p>
+                          <div>
+                            <Button variant="clean">Edit</Button>
+                            <Button variant="clean">Cancel</Button>
+                          </div>
+                        </div>
+                        <img
+                          src={item.drImage}
+                          alt={`${item.drName}'s profile`}
+                          className="round-image"
+                        />
+                      </div>
+                    </>
+                  </Card>
+                ))}
+              </div>
+            ))}
+          </Tab>
         </div>
       </div>
     </div>

@@ -62,6 +62,26 @@ const buttonVariants = {
     backgroundColor: 'transparent',
     padding: '0px',
   },
+  tab: {
+    color: 'var(--textPrimary)',
+    backgroundColor: 'white',
+    borderRadius: '8px',
+    fontFamily: 'Public Sans',
+    fontSize: '15px',
+    lineHeight: '20px',
+    border: '1.5px solid var(--borderPrimary)',
+    padding: '8px 16px',
+  },
+  tabActive: {
+    color: 'white',
+    backgroundColor: 'var(--backgroundTertiary)',
+    borderRadius: '8px',
+    fontFamily: 'Public Sans',
+    fontSize: '15px',
+    lineHeight: '20px',
+    border: '1.5px solid var(--backgroundTertiary)',
+    padding: '8px 16px',
+  },
 };
 export const Button = ({
   children,
