@@ -95,12 +95,13 @@ export default function Register() {
     }
   };
 
-  const hasErrors = Object.keys(errors).length > 0;
+  const hasErrors = Object.keys(errors).length > 0 && Object.values(errors).some(value => !!value)
 
-  const handleBlur = () => {
-    if (hasErrors) {
-      validateForm();
-    }
+  const handleBlur = (fieldName: keyof typeof inputRefs) => {
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [fieldName]: undefined,
+    }));
   };
 
   return (
@@ -145,11 +146,7 @@ export default function Register() {
             labelFor="firstName"
             id="firstName"
             reference={inputRefs.firstName}
-            onBlur={() => {
-              if (hasErrors) {
-                validateForm();
-              }
-            }}
+            onBlur={() => handleBlur('firstName')}
           />
           <Input
             type="text"
@@ -161,7 +158,7 @@ export default function Register() {
             labelFor="lastName"
             id="lastName"
             reference={inputRefs.lastName}
-            onBlur={handleBlur}
+            onBlur={() => handleBlur('lastName')}
           />
         </div>
         <Input
@@ -182,7 +179,7 @@ export default function Register() {
           labelFor="location"
           id="location"
           reference={inputRefs.location}
-          onBlur={handleBlur}
+          onBlur={() => handleBlur('location')}
         />
         <Input
           type="email"
@@ -194,7 +191,7 @@ export default function Register() {
           labelFor="email"
           id="email"
           reference={inputRefs.email}
-          onBlur={handleBlur}
+          onBlur={() => handleBlur('email')}
         />
         <Input
           type="password"
@@ -208,7 +205,7 @@ export default function Register() {
           labelFor="password"
           id="password"
           reference={inputRefs.password}
-          onBlur={handleBlur}
+          onBlur={() => handleBlur('password')}
         />
 
         <Button variant="form" type="submit">
