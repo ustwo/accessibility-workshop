@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 
-import { Form } from '@remix-run/react';
+import { Form, Link } from '@remix-run/react';
 import { LinksFunction } from '@remix-run/node';
 
 import { Input, links as inputLink } from '../components/Input';
@@ -42,12 +42,12 @@ export default function Register() {
     password: useRef<HTMLInputElement>(null),
   };
 
-  const buttonRefs = useRef<HTMLButtonElement[]>([]);
+  const linkRefs = useRef<HTMLAnchorElement[]>([]);
 
   useEffect(() => {
-    const firstElement = buttonRefs.current.findIndex((c) => c != null);
-    if (buttonRefs.current[firstElement]) {
-      buttonRefs.current[firstElement].focus();
+    const firstElement = linkRefs.current.findIndex((c) => c != null);
+    if (linkRefs.current[firstElement]) {
+      linkRefs.current[firstElement].focus();
     }
     setFormSubmitted(false);
   }, [formSubmitted]);
@@ -95,7 +95,9 @@ export default function Register() {
     }
   };
 
-  const hasErrors = Object.keys(errors).length > 0 && Object.values(errors).some(value => !!value)
+  const hasErrors =
+    Object.keys(errors).length > 0 &&
+    Object.values(errors).some((value) => !!value);
 
   const handleBlur = (fieldName: keyof typeof inputRefs) => {
     setErrors((prevErrors) => ({
@@ -116,19 +118,18 @@ export default function Register() {
                 const errorMessage = errors[error as keyof typeof inputRefs];
                 return (
                   errorMessage && (
-                    <Button
-                      type="button"
+                    <Link
                       key={error}
-                      reference={(el: HTMLButtonElement) =>
-                        (buttonRefs.current[index] = el)
+                      to={`#${error}`}
+                      ref={(el: HTMLAnchorElement) =>
+                        (linkRefs.current[index] = el)
                       }
-                      variant="errorLink"
                       onClick={() =>
                         handleFocus(error as keyof typeof inputRefs)
                       }
                     >
                       {errorMessage}
-                    </Button>
+                    </Link>
                   )
                 );
               })}
