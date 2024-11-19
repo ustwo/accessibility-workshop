@@ -8,12 +8,12 @@ import { Input, links as inputLink } from '../components/Input';
 import { Button } from '../components/Button';
 import { Select, links as selectLink } from '../components/Select';
 import { initialFormValues, schema } from '../utils/validation';
-import headerStylesHref from '../styles/register.css?url';
+import registerStylesHref from '../styles/register.css?url';
 import { Agreement, links as agreementLink } from '../components/Agreement';
 
 export const links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: headerStylesHref },
+    { rel: 'stylesheet', href: registerStylesHref },
     ...inputLink,
     ...selectLink,
     ...agreementLink,
@@ -136,7 +136,7 @@ export default function Register() {
           labelFor="password"
         />
 
-        <Button variant="form" type="submit">
+        <Button variant="form" size='large' type="submit">
           Create Account
         </Button>
         <Agreement />

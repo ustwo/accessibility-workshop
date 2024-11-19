@@ -1,0 +1,39 @@
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-left: 40px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  gap: 8px;
+}
+
+.carousel-item {
+  min-width: 220px;
+}
+
+.carousel-item > img {
+  border-radius: 8px;
+}
+
+.carousel-item > p:first-of-type {
+  margin: 0px;
+  padding-top: 8px;
+  font-family: 'DM Sans';
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20.25px;
+  color: black;
+}
+
+.carousel-item > p:last-of-type {
+  margin: 0px;
+  font-family: 'DM Sans';
+  font-size: 13px;
+  line-height: 16.93px;
+  color: var(--textLabel);
+}
