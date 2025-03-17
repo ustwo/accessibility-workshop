@@ -13,15 +13,10 @@ Clone the repository to your local environment using Git (note that the reposito
 ```bash
 git clone git@github.com:ustwo/accessibility-workshop.git
 cd accessibility-workshop
+yarn
 ```
 
 And thats it you are ready start.
-
-### Optional code editor set up
-
-In this project we are using yarn-pnp and zero-imports strategy. So if you face with some strange errors on imports
-here is the yarn documentation that should help you to deal with that problem in your code editor. 
-https://yarnpkg.com/getting-started/editor-sdks
 
 ## Development
 
