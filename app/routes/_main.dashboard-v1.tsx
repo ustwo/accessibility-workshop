@@ -43,8 +43,8 @@ export default function Dashboard() {
     <div>
       <div className="title">
         <h1>Hello, Mary</h1>
-        <Button variant="default" size="large">
-          Book Appointment
+        <Button variant="default" size="large" aria-label='Book Appointment'>
+          <span>Book Appointment</span>
         </Button>
       </div>
       <div className="dashboard-content">
@@ -81,14 +81,14 @@ export default function Dashboard() {
               <Title variant="large" title="Dr. Vega" />
               <Status variant="active" />
             </div>
-            <div className="messages-container">
-              <div>
+            <article className="messages-container">
+              <header>
                 <h3>Your messages</h3>
                 <Button variant="default" size="medium">
                   New Message
                 </Button>
-              </div>
-              <div>
+              </header>
+              <ul>
                 {messages.map(({ id, title, message, date }) => (
                   <Message
                     key={id}
@@ -97,8 +97,8 @@ export default function Dashboard() {
                     date={date}
                   />
                 ))}
-              </div>
-            </div>
+              </ul>
+            </article>
           </div>
         </div>
         <div className="history">
@@ -110,7 +110,7 @@ export default function Dashboard() {
                   <p className="card-title">{title}</p>
                   <div className="card-value">
                     <p>{value}</p>
-                    {url && <Link to={url}>See all</Link>}
+                    {url && <Link to={url} aria-label={`See all ${title}`}>See all</Link>}
                   </div>
                 </>
               </Card>
@@ -152,7 +152,7 @@ export default function Dashboard() {
         <div className="appointments">
           <div>
             <Title variant={'medium'} title="Upcoming appointments" />
-            <Link to="/appointments" aria-label="See all appointments">See all</Link>
+            <Link to="/appointments" aria-label="See all appointments">See allsdfsdfsdf</Link>
           </div>
           <Tab tabLabels={tabs.map((tab) => tab.label)}>
             {tabs.map((tab, tabIndex) => (

@@ -10,7 +10,7 @@ type MessageProps = {
 
 export const Message = ({ title, message, date }: MessageProps) => {
   return (
-    <div className="message">
+    <li className="message">
       <div>
         <h4>{title}</h4>
         <p>{date}</p>
@@ -18,6 +18,6 @@ export const Message = ({ title, message, date }: MessageProps) => {
       <div>
         <p>{message}</p>
       </div>
-    </div>
+    </li>
   );
 };

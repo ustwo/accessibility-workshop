@@ -5,10 +5,16 @@
   padding-bottom: 12px;
 }
 
-.message > div {
+.message > ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0rem;
 }
 
 .message h4 {
@@ -18,7 +24,7 @@
   margin: 0px;
 }
 
-.message > div > p {
+li.message > p {
   color: var(--backgroundTertiary);
   font-size: 13px;
   line-height: 16px;
@@ -26,7 +32,7 @@
   opacity: 62%;
 }
 
-.message > div:last-of-type > p {
+li.message:last-of-type > p {
   font-size: 15px;
   line-height: 20px;
 }
