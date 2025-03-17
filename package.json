@@ -32,7 +32,7 @@
   "devDependencies": {
     "@remix-run/dev": "^2.13.1",
     "@svgr/cli": "^8.1.0",
-    "@types/react": "^18.2.20",
+    "@types/react": "^18.3.18",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
