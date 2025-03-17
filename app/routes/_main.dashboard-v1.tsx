@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-
 import { LinksFunction } from '@remix-run/node';
 import { Link } from '@remix-run/react';
 
@@ -54,13 +53,26 @@ export default function Dashboard() {
           <div>
             <div className="video-container">
               <div>
-                <video ref={videoRef} autoPlay muted width="100%" loop>
+                <video 
+                  ref={videoRef} 
+                  autoPlay 
+                  muted 
+                  width="100%" 
+                  loop
+                  className="motion-video"
+                >
                   <source src="../../drVideo.mp4" />
                   <track kind="captions" />
                 </video>
+                <img 
+                  src="../../drAppointment1.png" 
+                  alt="Dr. Vega portrait" 
+                  width="100%" 
+                  className="reduced-motion-image" 
+                />
                 <Button
                   variant="clean"
-                  className="mute-button"
+                  className="mute-button motion-content"
                   onClick={toggleMute}
                 >
                   {isMuted ? <Unmute /> : <Mute />}
@@ -140,7 +152,7 @@ export default function Dashboard() {
         <div className="appointments">
           <div>
             <Title variant={'medium'} title="Upcoming appointments" />
-            <Link to="/appointments">See all</Link>
+            <Link to="/appointments" aria-label="See all appointments">See all</Link>
           </div>
           <Tab tabLabels={tabs.map((tab) => tab.label)}>
             {tabs.map((tab, tabIndex) => (

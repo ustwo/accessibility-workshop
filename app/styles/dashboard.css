@@ -273,3 +273,29 @@ p.card-title {
   border-radius: 50%;
   object-fit: cover;
 }
+
+/* Default state - show video, hide image */
+.motion-video {
+  display: block;
+  border-radius: 12px;
+}
+
+.reduced-motion-image {
+  display: none;
+  border-radius: 12px;
+}
+
+/* When reduced motion is preferred - hide video, show image */
+@media (prefers-reduced-motion: reduce) {
+  .motion-video {
+    display: none;
+  }
+  
+  .reduced-motion-image {
+    display: block;
+  }
+  
+  .motion-content {
+    display: none;
+  }
+}
