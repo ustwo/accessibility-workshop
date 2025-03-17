@@ -16,6 +16,9 @@ export default function IndexRoute() {
         <li>
           <Link to="/register-v3">Register form with accessibility</Link>
         </li>
+        <li>
+          <Link to="/dashboard-v1">Dashboard</Link>
+        </li>
       </ul>
     </section>
   );
